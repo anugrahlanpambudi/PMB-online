@@ -1,0 +1,35 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Hidden;
+
+#[Fillable(['name', 'email', 'password', 'role'])] // Tambahkan 'role' di sini
+#[Hidden(['password', 'remember_token'])]
+class User extends Authenticatable
+{
+    use HasFactory, Notifiable;
+
+    // Tambahkan relasi ini
+    public function pendaftaran()
+    {
+        return $this->hasOne(Pendaftaran::class, 'user_id');
+    }
+
+    protected function casts(): array
+    {
+        return [
+            'email_verified_at' => 'datetime',
+            'password' => 'hashed',
+        ];
+    }
+
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
+}
