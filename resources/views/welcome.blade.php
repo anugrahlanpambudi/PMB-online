@@ -71,7 +71,7 @@
                     <span class="text-indigo-600">Di Kampus Kami</span>
                 </h1>
                 <p class="max-w-2xl mx-auto text-lg text-gray-600 dark:text-gray-400 mb-10">
-                    Penerimaan Mahasiswa Baru Tahun Akademik 2024/2025 telah dibuka. Bergabunglah bersama ribuan mahasiswa lainnya dan kembangkan potensimu.
+                    Penerimaan Mahasiswa Baru Tahun Akademik 2026/2027 telah dibuka. Bergabunglah bersama ribuan mahasiswa lainnya dan kembangkan potensimu.
                 </p>
                 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">

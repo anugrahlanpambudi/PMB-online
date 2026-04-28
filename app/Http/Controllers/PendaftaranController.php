@@ -154,6 +154,8 @@ class PendaftaranController extends Controller
     {
         return Kecamatan::where('kabupaten_id', $id)->get();
     }
+    
+
 
     public function destroy($id)
     {

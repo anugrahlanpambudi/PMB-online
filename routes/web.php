@@ -10,8 +10,9 @@ use Illuminate\Support\Facades\Route;
 | PUBLIC
 |--------------------------------------------------------------------------
 */
+
 Route::get('/', function () {
-    return view('welcome'); 
+    return view('welcome');
 });
 
 /*
@@ -25,7 +26,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
     /*
-    |--------------------------------------------------------------------------
+    |------------------------------------------------------------------------
     | PENDAFTARAN USER (Bisa diakses Admin & User)
     |--------------------------------------------------------------------------
     */
@@ -53,6 +54,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/pendaftaran', [PendaftaranController::class, 'index'])
             ->name('admin.pendaftaran');
 
+
         // EDIT
         Route::get('/pendaftaran/{id}/edit', [PendaftaranController::class, 'edit'])
             ->name('admin.pendaftaran.edit');
@@ -75,4 +77,4 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
